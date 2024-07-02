@@ -1,22 +1,21 @@
 from dotenv import load_dotenv
 load_dotenv()
 
-from crewai import  Agent, Task, Crew, Process
+from crewai import Crew
 
-# tasks = Tasks()
-# agents = Agents()
+from tasks import Tasks
+from agents import Agents
 
-company_description = "We sell great ideas";
-# input("What is the company description?\n")
-company_domain = "Managemental consultant";
-# input("What is the company domain?\n")
-hiring_needs = "People who has ideas";
-# input("What are the hiring needs?\n")
-specific_benefits = "Wonderful salary";
-# input("What are specific_benefits you offer?\n")
+tasks = Tasks()
+agents = Agents()
+
+company_description = input("What is the company description?\n")
+company_domain = input("What is the company domain?\n")
+hiring_needs = input("What are the hiring needs?\n")
+specific_benefits = input("What are specific_benefits you offer?\n")
 
 # Create Agents
-researcher_agent = Agent.research_agent()
+researcher_agent = agents.research_agent()
 writer_agent = agents.writer_agent()
 review_agent = agents.review_agent()
 
